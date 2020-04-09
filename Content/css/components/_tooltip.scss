@@ -1,0 +1,14 @@
+﻿@import '../base/typography';
+
+.tooltip {
+    > .arrow {
+        display: none;
+    }
+
+    > .tooltip-inner {
+        font-family: $main-font-condensed;
+        font-size: 0.8rem;
+        text-transform: capitalize;
+        background-color: #333;
+    }
+}

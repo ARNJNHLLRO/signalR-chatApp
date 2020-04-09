@@ -1,0 +1,20 @@
+﻿@import '../base/typography';
+
+body {
+    font-family: $main-font;
+    font-weight: 400;
+    font-size: 14px;
+    color: $text-color;
+}
+
+.text-condensed {
+    font-family: $main-font-condensed;
+}
+
+.text-secondary {
+    color: $text-secondary !important;
+}
+
+.text-dark {
+    color: $text-dark !important;
+}

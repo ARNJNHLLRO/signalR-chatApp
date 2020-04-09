@@ -1,0 +1,124 @@
+﻿#home {
+    .info {
+        width: 10%;
+    }
+
+    .content-container {
+        display: flex;
+        justify-content: space-between;
+
+        .compose {
+            padding: 20px;
+            width: 50vw;
+        }
+
+        .time-received {
+            position: absolute;
+            top: 0;
+            right: 2px;
+            font-size: 10px;
+            padding: 5px;
+        }
+
+        .messages, .private-messages {
+            height: 90vh;
+            width: 100%;
+            padding: 20px;
+            max-height: 70vh;
+            overflow-y: scroll;
+            color: white;
+
+            .info {
+                color: #196ae3;
+                display: flex;
+                width: 100%;
+                justify-content: center;
+            }
+
+            .received-messages {
+                border-radius: 7px;
+                padding: 8px;
+                background-color: #007bff;
+                opacity: .3;
+                transition: .2s ease-in-out all;
+                transform: translateX(-10%);
+                cursor: pointer;
+
+                &:hover {
+                    transform: scale(1.05);
+                }
+
+                &.new {
+                    transform: translateX(0%);
+                    opacity: 1;
+                }
+
+                &.zoom {
+                    transform: scale(1.05);
+                }
+
+                .received-from {
+                    text-transform: uppercase;
+                    font-weight: bolder;
+                }
+
+                .received-message {
+                    white-space: pre-wrap;
+                    word-wrap: break-word;
+                }
+            }
+        }
+    }
+
+    @media only screen and (max-width: 588px) {
+        .content-container {
+            display: flex;
+            justify-content: space-between;
+            flex-direction: column-reverse;
+        }
+
+        .messages, .private-messages {
+            height: 30vh !important;
+        }
+
+        .compose {
+            width: 100% !important;
+        }
+    }
+}
+
+#game {
+    .type {
+        display: flex;
+        justify-content: center;
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
+
+    .game-container {
+        display: grid;
+        grid-template-columns: 50% 50%;
+        height: 50vh;
+        width: 100%;
+    }
+
+    .one, .two {
+        font-size: 12rem;
+        display: flex;
+        justify-content: center;
+        transition: .2s ease-in-out all;
+    }
+
+    @media only screen and (max-width: 588px) {
+        .one, .two {
+            font-size: 4rem;
+        }
+    }
+
+    .text-answer {
+        display: flex;
+        justify-content: center;
+        font-size: 3rem;
+        text-transform: uppercase;
+    }
+}

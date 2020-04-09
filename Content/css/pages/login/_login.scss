@@ -1,0 +1,265 @@
+﻿@import '../../base/colors';
+
+.login-form-bg {
+    background: url(../Content/images/loginbg.jpg) center no-repeat;
+    background-size: cover;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    position: fixed;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: 1500;
+    overflow-x: hidden;
+    overflow-y: auto;
+
+    .login-container {
+        margin: 0 auto;
+        display: block;
+        position: relative;
+        z-index: 1500;
+        width: 450px;
+        max-height: 100%;
+        height: auto;
+        padding-left: 0;
+        padding-right: 0;
+        -webkit-transition: all .2s ease-in-out;
+        -moz-transition: all .2s ease-in-out;
+        -o-transition: all .2s ease-in-out;
+        transition: all .2s ease-in-out;
+
+        .inner {
+            padding: 0;
+            background-color: #ffffff;
+            box-shadow: 0 2px 2px 0 rgba(0,0,0,0.14),0 3px 1px -2px rgba(0,0,0,0.12),0 1px 5px 0 rgba(0,0,0,0.2);
+
+            .form-inner {
+                padding: 30px;
+                padding-top: 40px;
+            }
+
+            #imgKCCLogo {
+                height: 30px;
+                pointer-events: none;
+                user-select: none;
+                -webkit-user-select: none;
+            }
+
+            .application-name {
+                display: block;
+                font-size: 1.5rem;
+                margin-top: 5px;
+                color: #ffffff;
+            }
+
+            .header {
+                display: block;
+                height: auto;
+                background-color: $primary-color;
+                width: 100%;
+            }
+
+            .footer {
+                font-size: 0.8em;
+                color: #757575;
+                width: 100%;
+                padding-top: 0;
+                padding-bottom: 0;
+                position: absolute;
+                bottom: 0;
+
+                .system-copyright, .system-version {
+                    position: absolute;
+                    right: 25px;
+                    bottom: 10px;
+                    -webkit-transition: .2s ease;
+                    transition: .2s ease;
+                }
+
+                .system-version {
+                    position: absolute;
+                    left: 25px;
+                    bottom: 10px;
+                    -webkit-transition: .2s ease;
+                    transition: .2s ease;
+                }
+            }
+        }
+
+        #frmLogin {
+            padding-bottom: 100px;
+            min-height: 270px;
+
+            #btnLogin {
+                cursor: pointer;
+                font-size: 0.9em;
+                padding: 10px;
+                padding-left: 25px;
+                padding-right: 25px;
+                float: right;
+                margin-top: 20px;
+                border-radius: 0;
+            }
+
+            .prefix {
+                color: #424242;
+                position: absolute;
+                font-size: 1.3em;
+                -webkit-transition: all .3s ease;
+                -moz-transition: all .3s ease;
+                -o-transition: all .3s ease;
+                transition: all .3s ease;
+            }
+
+            .form-control {
+                border: none;
+                border-bottom: 1px solid #ccc;
+                font-size: 0.95em;
+            }
+
+            .form-group {
+                position: relative;
+            }
+
+            .form-group.focused:after {
+                width: 100%;
+            }
+
+            .form-group:after {
+                content: '';
+                display: block;
+                border-bottom: 1px solid $primary-color;
+                width: 0;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                -webkit-transition: .3s ease;
+                transition: .3s ease;
+            }
+
+            .input-group-addon {
+                min-width: 40px;
+                padding-left: 0;
+                padding-right: 0;
+                text-align: center;
+
+                i {
+                    margin: 0 auto;
+                }
+            }
+
+            .password-input {
+                margin-top: 30px;
+
+                &:before {
+                    opacity: 0;
+                    pointer-events: none;
+                    content: '\0026A0  Caps lock is on';
+                    font-size: 0.85em;
+                    position: absolute;
+                    transform: translateY(100%);
+                    font-weight: 500;
+                    color: #FF5722;
+                    -webkit-transition: all .2s ease-in-out;
+                    transition: all .2s ease-in-out;
+                }
+
+                &.caps-on:before {
+                    opacity: 1;
+                    transform: translateY(200%);
+                }
+            }
+
+            .username-input .prefix {
+                top: 5px;
+            }
+
+            .password-input .prefix {
+                top: 6px;
+            }
+
+            .username-input input, .password-input input {
+                padding-left: 20px;
+                padding-bottom: 5px;
+                border-radius: 0;
+                -webkit-transition: all .2s ease;
+                -moz-transition: all .2s ease;
+                -o-transition: all .2s ease;
+                transition: all .2s ease;
+            }
+
+            .username-input input:focus, .password-input input:focus {
+                box-shadow: none;
+            }
+
+            .username-input input:focus ~ .prefix, .password-input input:focus ~ .prefix {
+                color: $primary-color;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 450px) {
+    .login-form-bg {
+        .login-container {
+            width: 100%;
+            height: 100%;
+
+            .inner {
+                min-height: 100%;
+
+                .form-inner {
+                    padding-left: 20px;
+                    padding-right: 20px;
+                }
+
+                .header {
+                    padding-top: 40px;
+                }
+
+                .footer {
+                    .system-version, .system-copyright {
+                        bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-height: 445px) {
+    .login-form-bg {
+        .login-container {
+            height: 100%;
+
+            .inner {
+                min-height: 100%;
+
+                .footer {
+                    .system-version, .system-copyright {
+                        bottom: 10px;
+                    }
+                }
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 460px) {
+    .login-container {
+        .inner {
+            .footer {
+                .system-version {
+                    transform: translateY(-100%);
+                }
+
+                .system-copyright {
+                    left: 25px;
+                }
+            }
+        }
+    }
+}

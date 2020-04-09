@@ -1,0 +1,10 @@
+﻿@import '../base/typography';
+@import '../base/colors';
+
+body {
+    font-family: $main-font;
+    font-weight: 400;
+    font-size: 14px;
+    color: $text-color;
+    background-color: $main-content-bg-color;
+}

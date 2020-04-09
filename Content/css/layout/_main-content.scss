@@ -1,0 +1,15 @@
+﻿@import '../base/colors';
+@import '../base/sizes';
+
+#main-content {
+    padding: 1rem;
+    padding-top: calc(1rem + #{$header-height});
+    min-height: 100vh;
+    background-color: $main-content-bg-color;
+}
+
+@media screen and (min-width: $bootstrap-breakpoint-md) {
+    #main-content {
+        padding-left: calc(1rem + #{$sidebar-width-collapsed});
+    }
+}

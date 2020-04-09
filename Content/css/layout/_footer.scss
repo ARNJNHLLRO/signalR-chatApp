@@ -1,0 +1,25 @@
+﻿@import '../base/typography';
+@import '../base/sizes';
+
+.footer-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    height: $footer-height;
+    padding-left: $sidebar-width-collapsed;
+
+    .footer-detail {
+        cursor: default;
+
+        &:hover {
+            color: $text-color !important;
+        }
+    }
+}
+
+@media screen and (min-width: $bootstrap-breakpoint-md) {
+    .footer-container {
+        padding-right: 2rem;
+        padding-left: calc(2rem + #{$sidebar-width-collapsed});
+    }
+}

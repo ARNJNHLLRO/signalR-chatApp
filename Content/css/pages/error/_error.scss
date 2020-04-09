@@ -1,0 +1,30 @@
+﻿@import '../../base/colors';
+@import '../../base/sizes';
+
+.error-page-container {
+    width: 100%;
+    height: calc(100vh - #{$header-height});
+
+    .error-details {
+        margin: 0 auto;
+        padding: 2rem 1.5rem 1.5rem 1.5rem;
+
+        .error-image {
+            width: 100%;
+            display: block;
+            max-width: 350px;
+            margin-left: auto;
+            margin-right: auto;
+            pointer-events: none;
+            user-select: none;
+            -webkit-user-select: none;
+            transition: all .2s ease;
+            -webkit-transition: all .2s ease;
+        }
+
+        .text-container {
+            margin-top: 10px;
+            text-align: center;
+        }
+    }
+}
