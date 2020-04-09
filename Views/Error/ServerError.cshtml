@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Internal Server Error";
+}
+
+<div class="error-page-container error-500">
+    <main class="error-details">
+        <img class="error-image" title="Internal Server Error" alt="Error 500" src="@Url.Content("~/Content/images/error500.png")" />
+        <content class="text-container">
+            <h4>
+                Internal Server Error
+                <small class="text-muted">:(</small>
+            </h4>
+            <p><small>An error occured and your request couldn't be completed. Please try again.</small></p>
+        </content>
+    </main>
+</div>

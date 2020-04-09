@@ -1,0 +1,22 @@
+﻿<div id="game">
+    <div class="type"><span class="operator-type">ADDITION</span></div>
+    <div class="game-container">
+        <div class="number-one">
+            <span class="one">1</span>
+        </div>
+        <div class="number-one">
+            <span class="two">1</span>
+        </div>
+    </div>
+    <div class="text-answer">
+        <input id="txtAnswer" type="text" class="form-control" placeholder="Answer" />
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/signalR/hubs")
+    @Scripts.Render("~/Content/js/home/game.js")
+    <script>
+        //$('table').DataTable();
+    </script>
+}

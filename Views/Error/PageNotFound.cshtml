@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Page Not Found";
+}
+
+<div class="error-page-container error-404">
+    <main class="error-details">
+        <img class="error-image" title="Page not Found" alt="Error 404" src="@Url.Content("~/Content/images/error404.png")" />
+        <content class="text-container">
+            <h4>
+                Page not found
+                <small class="text-muted">:(</small>
+            </h4>
+            <p><small>The page you are looking for doesn't exist.</small></p>
+        </content>
+    </main>
+</div>

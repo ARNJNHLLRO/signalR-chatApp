@@ -1,0 +1,101 @@
+﻿@{
+    ViewBag.Title = "Home";
+    ViewBag.Username = "username";
+}
+
+<div id="home">
+    <div class="content-container">
+        <div class="compose">
+            <div class="compose-username mb-4">
+                <input id="txtUsername" type="text" class="form-control" placeholder="Set Username" />
+            </div>
+            <div class="time-received"></div>
+            <div class="compose-message mb-4">
+                <textarea id="txtMessage" maxlength="160" rows="6" class="form-control" placeholder="Your message here..."></textarea>
+            </div>
+
+            <div class="compose-button d-flex justify-content-end">
+                <button id="btnBuzz" class="btn btn-primary mr-2"><i class="fa fa-bell"></i>&nbsp;Buzz</button>
+                <button id="btnSend" class="btn btn-primary"><i class="fa fa-paper-plane"></i>&nbsp;Send</button>
+            </div>
+        </div>
+        <div class="messages">
+            <div class="info">
+                <span>- No messages received yet -</span>
+            </div>
+        </div>
+        <div class="private-messages">
+            <div class="info">
+                <span>- No messages received yet -</span>
+            </div>
+        </div>
+    </div>
+    <div class="members">
+        <span class="badge badge-primary">Members</span>
+    </div>
+    <div class="private-members">
+        <span class="badge badge-primary">Members</span>
+    </div>
+
+    <div class="modal fade" id="mdlRoom" tabindex="-1" role="dialog" aria-labelledby="modalSetClrType" aria-hidden="true">
+        <div class="modal-dialog modal-sm" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Enter Room</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <div class="form-group">
+                        <input type="text" class="form-control" id="txtRoomNumber" placeholder="Room Name" />
+                    </div>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-outline-secondary" data-dismiss="modal">Close</button>
+                    <button id="btnJoin" type="button" class="btn btn-primary" btn-process="default">Join</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+    @Scripts.Render("~/signalR/hubs")
+    @Scripts.Render("~/Content/js/home/messaging.js")
+    <script>
+        //$('table').DataTable();
+        function notificationIsSupported() {
+            return typeof window.Notification != "undefined";
+        };
+
+        function checkWebNotificationPermission() {
+            // status list for permission:
+            // "default" => permission hasn't been request yet
+            // "denied" => Web Notification API will not work
+            // "granted" => permission is already granted
+            if (notificationIsSupported() && Notification.permission == "default") {
+                Notification.requestPermission();
+            }
+        }
+
+        var displayNotification = function (title, message) {
+            // detect what type of notification should be
+            // used (WebNotification or a simple alert)
+            if (!notificationIsSupported() || Notification.permission != "granted") {
+                //alert(title + "\n" + message);
+            } else {
+                new Notification(title, {
+                    icon: "notification.png",
+                    body: message
+                });
+            }
+        };
+
+        // permission should be requested as soon as the page is
+        // loaded, so when a notification is ready to be sent,
+        // permission is already granted
+        checkWebNotificationPermission();
+
+    </script>
+}

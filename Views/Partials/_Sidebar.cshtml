@@ -1,0 +1,54 @@
+﻿@*<div class="sidebar-container">
+    <div class="sidebar">
+        <ul class="sidebar-menu-list text-secondary">
+            <li class="sidebar-menu active">
+                <a class="sidebar-link" href="@Url.Action("Index", "Home")" data-toggle="tooltip" title="Home" data-placement="right"></a>
+                <span class="menu-icon">
+                    <i class="fa fa-fw fa-home"></i>
+                </span>
+                <span class="menu-text">
+                    Home
+                </span>
+            </li>
+            <li class="sidebar-menu sidebar-menu-dropdown" data-toggle="collapse" href="#subReports">
+                <a class="sidebar-link" data-toggle="tooltip" title="Reports" data-placement="right" data-target="subReports"></a>
+                <span class="menu-icon">
+                    <i class="fa fa-fw fa-bar-chart"></i>
+                </span>
+                <span class="menu-text">
+                    Reports
+                </span>
+            </li>
+            <li id="subReports" class="sidebar-submenu-list panel-collapse collapse">
+                <div class="sidebar-submenu">
+                    <a class="sidebar-link" href="@Url.Action("SampleReport", "Reports")" data-toggle="tooltip" title="Sample Report" data-placement="right"></a>
+                    <span class="submenu-icon">
+                        <i class="fa fa-fw fa-pie-chart"></i>
+                    </span>
+                    <span class="submenu-text">
+                        Sample Report
+                    </span>
+                </div>
+                <div class="sidebar-submenu">
+                    <a class="sidebar-link" href="@Url.Action("Analytics", "Reports")" data-toggle="tooltip" title="Analytics" data-placement="right"></a>
+                    <span class="submenu-icon">
+                        <i class="fa fa-fw fa-area-chart"></i>
+                    </span>
+                    <span class="submenu-text">
+                        Analytics
+                    </span>
+                </div>
+            </li>
+            <li class="sidebar-menu">
+                <a class="sidebar-link" href="@Url.Action("Index", "Settings")" data-toggle="tooltip" title="Settings" data-placement="right"></a>
+                <span class="menu-icon">
+                    <i class="fa fa-fw fa-gears"></i>
+                </span>
+                <span class="menu-text">
+                    Settings
+                </span>
+            </li>
+        </ul>
+    </div>
+    <div class="sidebar-overlay"></div>
+</div>*@

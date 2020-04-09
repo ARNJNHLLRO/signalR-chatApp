@@ -1,0 +1,16 @@
+﻿@{
+    ViewBag.Title = "Error";
+}
+
+<div class="error-page-container error-default">
+    <main class="error-details">
+        <img class="error-image" title="Error" alt="Error" src="@Url.Content("~/Content/images/defaulterror.png")" />
+        <content class="text-container">
+            <h4>
+                Something went wrong
+                <small class="text-muted">:(</small>
+            </h4>
+            <p><small>To continue, press Reload or go back to the previous page and try again.</small></p>
+        </content>
+    </main>
+</div>

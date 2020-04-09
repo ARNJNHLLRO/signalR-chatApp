@@ -1,0 +1,48 @@
+﻿@{
+    Layout = null;
+}
+
+@Styles.Render("~/bundles/css")
+
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login</title>
+
+    <link rel="shortcut icon" type="image/x-icon" href="@Url.Content("~/Content/images/favicon.ico")" />
+</head>
+<body>
+    <div class="login-form-bg">
+        <main class="login-container">
+            <div class="inner col-sm-12">
+                <header class="header form-inner">
+                    <img id="imgKCCLogo" src="~/Content/images/nav-logo.png">
+                    <label class="application-name" title="Application Name">System Name</label>
+                </header>
+                <section class="content form-inner">
+                    <form id="frmLogin">
+                        <div class="username-input form-group">
+                            <input id="txtUsername" type="text" class="form-control" placeholder="Username">
+                            <span class="prefix"><i class="fa fa-user"></i></span>
+                        </div>
+                        <div class="password-input form-group">
+                            <input id="txtPassword" type="password" class="form-control" placeholder="Password">
+                            <span class="prefix"><i class="fa fa-lock"></i></span>
+                        </div>
+                        <button id="btnLogin" type="button" class="btn btn-primary">LOGIN</button>
+                    </form>
+                </section>
+                <footer class="footer form-inner">
+                    <label class="system-version">Version No: 1.0.0.0</label>
+                    <label class="system-copyright">&copy; @DateTime.Now.Year - KCC Property Holdings Incorporated</label>
+                </footer>
+            </div>
+        </main>
+    </div>
+</body>
+</html>
+
+@Scripts.Render("~/bundles/js")
+@Scripts.Render("~/Content/js/login/login.js")

@@ -1,0 +1,45 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta http-equiv="Content-type" content="text/html; charset=utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>@ViewBag.Title</title>
+    <link rel="icon" type="image/x-icon" href="@Url.Content("~/Content/images/favicon.ico")" />
+    <link rel="manifest" href="/manifest.json">
+
+    @Styles.Render("~/bundles/css")
+</head>
+<body>
+    <header class="header">
+        @Html.Partial("~/Views/Partials/_Header.cshtml")
+    </header>
+    
+    <section class="section">
+        <div id="main-content">
+            @RenderBody()
+        </div>
+    </section>
+    
+    <section class="section">
+        @Html.Partial("~/Views/Partials/_Sidebar.cshtml")
+    </section>
+
+    <footer class="footer">
+        @Html.Partial("~/Views/Partials/_Footer.cshtml")
+    </footer>
+
+</body>
+</html>
+
+<script>
+    if ('serviceWorker' in navigator) {
+        navigator.serviceWorker
+            .register('/serviceworker.js')
+            .then(function () { console.log('Service Worker Registered'); });
+    }
+</script>
+
+
+
+@Scripts.Render("~/bundles/js")
+@RenderSection("Scripts", required: false)
